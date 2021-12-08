@@ -13,6 +13,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name = "categoria")
 
@@ -26,7 +28,7 @@ public class CategoriaModel {
 	private @NotNull Boolean estoque;
 	
 	@OneToMany(mappedBy = "categoria", cascade = CascadeType.REMOVE)
-
+	@JsonIgnoreProperties("categoria")
 	private List<ProdutoModel> produto = new ArrayList<>();
 	
 

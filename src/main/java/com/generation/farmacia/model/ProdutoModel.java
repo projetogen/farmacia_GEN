@@ -31,7 +31,7 @@ public class ProdutoModel {
 
 	@ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
 	@JoinColumn(name = "fk_categoria")
-	@JsonIgnoreProperties 
+	@JsonIgnoreProperties ("produto")
 	private CategoriaModel categoria;
 
 	public Long getId() {
