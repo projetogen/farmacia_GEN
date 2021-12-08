@@ -37,7 +37,7 @@ models (uma categoria para muitos produtos e muitos produtos para uma
 categoria)
 
 
-## Anotações para o
+
 relacionamento e inibir recursividade através da anotação
 @JsonIgnoreProperties.
 
