@@ -1,9 +1,15 @@
 package com.generation.farmacia.model;
 
+import java.util.ArrayList;
+
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -18,6 +24,11 @@ public class CategoriaModel {
 	private @NotNull Boolean entrega;
 
 	private @NotNull Boolean estoque;
+	
+	@OneToMany(mappedBy = "categoria", cascade = CascadeType.REMOVE)
+
+	private List<ProdutoModel> produto = new ArrayList<>();
+	
 
 	public Long getId() {
 		return id;
@@ -51,4 +62,11 @@ public class CategoriaModel {
 		this.estoque = estoque;
 	}
 
+	public List<ProdutoModel> getProduto() {
+		return produto;
+	}
+
+	public void setProduto(List<ProdutoModel> produto) {
+		this.produto = produto;
+	}
 }
