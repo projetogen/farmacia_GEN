@@ -21,8 +21,8 @@ import org.springframework.web.server.ResponseStatusException;
 import com.generation.farmacia.model.CategoriaModel;
 import com.generation.farmacia.repository.CategoriaRepository;
 
-@RequestMapping("/categoria")
 @RestController
+@RequestMapping("/categoria")
 @CrossOrigin("*")
 public class CategoriaController {
 	@Autowired
